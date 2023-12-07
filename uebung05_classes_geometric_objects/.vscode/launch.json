@@ -1,0 +1,44 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "breakOnLoad": true,
+      "name": "chrome Launch index.html",
+      "type": "chrome",
+      "runtimeArgs": [
+        "--allow-file-access ",
+        "--disable-extensions ",
+        "--allow-file-access-from-files",
+        "--allow-cross-origin-auth-prompt",
+        "--disable-features=TranslateUI"
+      ],
+      "request": "launch",
+      "file": "${workspaceFolder}/index.html"
+    },
+    {
+      "name": "firefox launch index.html",
+      "type": "firefox",
+      "reAttach": true,
+      "request": "launch",
+      "file": "${workspaceFolder}/index.html"
+    }
+    {
+      "breakOnLoad": true,
+      "name": "chromium Launch index.html",
+      "type": "chrome",
+      // change path to your chromium path
+      "runtimeExecutable": "C:/Users/gam/AppData/Local/Chromium/Application/chrome.exe",
+      "runtimeArgs": [
+        "--allow-file-access ",
+        "--allow-file-access-from-files",
+        "--allow-cross-origin-auth-prompt",
+        "--disable-features=TranslateUI"
+      ],
+      "request": "launch",
+      "file": "${workspaceFolder}/index.html"
+    },
+  ]
+}

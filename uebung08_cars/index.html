@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title id="myTitle">Vorlage</title>
+  </head>
+  <body>
+    <div class="container">
+      <header id="page-header" class="bg-dark text-white col-sm-12">
+        <h1 id="myHeading1" class="text-center"></h1>
+      </header>     
+      <div class="jumbotron">
+      <table > 
+      <tr> 
+       <td>
+       <div> Marke: </div>
+       <div><input type="text" id="inputBrand"> </div>
+      </td>
+      <td>
+       <div> Modell: </div> 
+       <div><input type="text" id="inputModel"> </div>
+       </td>
+       <td>
+        <div> Verbrauch auf 100km: </div> 
+        <div><input type="text" id="inputFuelConsumption"> </div>
+        </td>
+       </tr>
+       <tr>
+       <td>
+       <div> Leistung (PS): </div> 
+       <div><input type="text" id="inputPS"> </div>
+       </td><td>
+       <div> Sprit-Typ: </div> 
+       <div><input type="text" id="inputFuelType"> </div>
+       </td>
+        <td>
+          <div> Getriebeart: </div> 
+          <div><input type="text" id="inputGearbox"> </div>
+          </td>
+       </td><tr><td>
+       <div> Max. Tankfüllung: </div> 
+       <div><input type="text" id="inputMaxFuel"> </div>
+       <td>
+         <div> Farbe: </div> 
+         <div><input type="text" id="inputColor"> </div>
+        </td>
+      </tr>
+    </td>
+      
+      </td><td>
+        <br><br>
+      <div> Suchen nach Marke: </div> 
+      <div><input type="text" id="inputSearchBrand"> </div>
+        </td>
+        <td> <br><br>
+        <div> Gesuchter Verbrauch: </div> 
+        <div><input type="text" id="inputSearchFuelConsumption"> </div> </td>
+         </table>
+     <p><p> <button id="buttonAddCar"> Hinzufügen </button> <button id="buttonShowCarInfos"> Fahrzeuge anzeigen </button> <button id="buttonSearchBrand"> Marke suchen </button>
+      <button id="buttonSearchConsumption"> Fahrzeug mit X Verbrauch anzeigen</button>
+            
+      </div>
+      <div class="jumbotron">
+        <div id="output"></div>
+      </div>
+      <div class="jumbotron">
+        <div id="output2"></div>
+      </div>
+    </div>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

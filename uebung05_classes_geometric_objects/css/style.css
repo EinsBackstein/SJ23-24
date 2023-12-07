@@ -1,0 +1,10 @@
+html {
+  font-family: 'Source Sans Pro', Verdana, Arial, Helvetica, sans-serif;
+}
+#output {
+  color: green;
+}
+
+.commentheader {
+  color: rgb(90, 15, 38);
+}

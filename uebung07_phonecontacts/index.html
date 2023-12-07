@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title id="myTitle">Vorlage</title>
+  </head>
+  <body>
+    <div class="container">
+      <header id="page-header" class="bg-dark text-white col-sm-12">
+        <h1 id="myHeading1" class="text-center"></h1>
+      </header>     
+      <div class="jumbotron">
+        <h3>Neuen Kontakt anlegen:</h3>
+        <div> Vorname: </div>
+        <div><input type="text" id="inFirstName"> </div>      
+        <div> Nachname: </div> 
+        <div><input type="text" id="inLastName"> </div>
+        <div> Telefonnummer: </div> 
+        <div><input type="text" id="inPhoneNumber"> </div>      
+        <div> Kontakttyp: </div> 
+        <div><input type="text" id="inContactType"> </div>
+       
+        <br>
+        <br> 
+        <button id="btnAddContact"> Hinzufügen </button>
+      
+
+        <p></p> 
+        <hr>
+        <p></p> 
+        <h3>Suche:</h3>
+        <div>Alle Kontakte anzeigen: 
+          <button id="btnShowAll"> Anzeigen </button>
+        </div>
+        <p></p>
+        <div> Jeden anrufen:  
+          <input type="text" placeholder="Länge des Telefonats" id="inSpentTime">
+          <button id="btnCall"> Anruf </button> 
+        </div>
+        <p></p>
+        <div> Suche nach BenutzerID:  
+          <input type="text" id="inUserId">
+          <button id="btnSearchId"> Suchen </button> 
+        </div>
+        <p></p>
+        <div> Suche nach Nachnamen:  
+          <input type="text" id="inSearchLastName">
+          <button id="btnSearchLastName"> Suchen </button> 
+        </div>
+        <p></p>
+        <div> Kontakt anrufen:  
+          <input type="text" id="inCallContact" placeholder="Welchen Kontakt anrufen?">
+          <input type="text" id="inCallContactTime" placeholder="Wie lange telefonieren?">
+          <button id="btnCallContact"> Anrufen </button> 
+        </div>
+        <p></p>
+        <div> Kontakt löschen:  
+          <input type="text" id="inDeleteId">
+          <button id="btnDeleteId"> Löschen </button> 
+        </div>
+        <p></p>
+      </div>
+        <div class="jumbotron">
+          <h3>Ausgabeinfos:</h3>
+        <div id="outputInfos"></div>
+      </div>
+     
+    <script src="js/main.js"></script>
+  </body>
+</html>
