@@ -1,5 +1,5 @@
 
-# Hier sind werden alle SEW-Aufgaben des Schuljahres hochgeladen
+# Hier werden alle SEW-Aufgaben des Schuljahres 23/24 hochgeladen
 
 ---
 
