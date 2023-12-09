@@ -1,5 +1,5 @@
 /*
-Project: uebung08_cars 1234
+Project: uebung08_cars
 Author:  nottj
 Date:    28.11.2023
 */
