@@ -8,3 +8,15 @@ html {
 .commentheader {
   color: rgb(90, 15, 38);
 }
+
+
+
+
+#output2 thead, #output2 tr td{
+  text-align: center;
+  border: 1px solid black;
+}
+
+thead td{
+  padding: 10px;
+}
