@@ -39,7 +39,7 @@ class Album {
   #year;
   #rating;
   constructor(title, interpret, length, year, rating) {
-    (this.#id = Album.id++),
+      (this.#id = Album.id++),
       (this.title = title),
       (this.length = length),
       (this.year = year),
@@ -100,12 +100,17 @@ Album.id = 100;
 
 //Functions
 
+function getTableRow(album)  {
+
+return `<tr><td>${album.title}</td><td>${album.interpret}</td><td>${album.year}</td><td>${album.length}</td><td>${album.rating}</td><td>${album.id}</td></tr>`;
+}
+
 //shows a table in the GUI with all the albums or just with the albums of a specific interpret
 
 function showTable(array, interpret) {
   let table = `
     <thead>
-      <td> Albumname  </td>
+      <td>   Albumname  </td>
       <td>   Interpret  </td>
       <td>   Erscheinungsjahr  </td>
       <td>   Länge  </td>
@@ -116,15 +121,15 @@ function showTable(array, interpret) {
   if (interpret != '') {
     for (let album of array) {
       if (album.interpret == interpret) {
-        table += `<tr><td>${album.title}</td><td>${album.interpret}</td><td>${album.year}</td><td>${album.length}</td><td>${album.rating}</td><td>${album.id}</td></tr>`;
+        table += getTableRow(album);
       }
     }
   } else {
     for (let album of array) {
-      table += `<tr><td>${album.title}</td><td>${album.interpret}</td><td>${album.year}</td><td>${album.length}</td><td>${album.rating}</td><td>${album.id}</td></tr>`;
-    }
+      table += getTableRow(album);
   }
   return table;
+}
 }
 
 //Main-Code execution
