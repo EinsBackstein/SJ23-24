@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <meta charset="UTF-8" />
-    <meta name="google" content="notranslate" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title id="myTitle">Template</title>
-  </head>
-  <body>
-    <div class="container">
-      <header id="page-header" class="bg-dark text-white col-sm-12" style="border-bottom-left-radius: 10px;
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="google" content="notranslate"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title id="myTitle">Template</title>
+    </head>
+    <body>
+        <div class="container">
+            <header
+                id="page-header"
+                class="bg-dark text-white col-sm-12"
+                style="border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px">
-        <h1 id="myHeading" class="text-center">fooHeading</h1>
-      </header>
-      <div class="container"><br>
-        <input id="sentence_input" type="text" placeholder="Bitte Satz eingeben">
-        <input id="letter_input" type="text" placeholder="Bitte Buchstaben für Analyse eingeben"><br><br>
-        <div class="buttons">
-        <button id="longest_word">Längstes Wort</button>
-        <button id="shortest_word">Kürzestes Wort</button>
-        <button id="average_length">Durchschnittliche Wortlänge</button>
-        <button id="count_letter_words">Anzahl der Wörter mit gewissem Buchstaben</button></div><br><br>
-      </div>
-      <div class="output">
-        <p id="output1"></p>
-        <p id="output2"></p>
-        <p id="output3"></p>
-        <p id="output4"></p>
-      </div>
-    <script src="js/main.js"></script>
-  </body>
-</html>
+                <h1 id="myHeading" class="text-center">fooHeading</h1>
+            </header>
+            <div class="container_"><br>
+                <input id="inId" type="text" placeholder="Foto-ID (Input auch für Anwendungen)">
+                <input id="inTitle" type="text" placeholder="Titel">
+                <input id="inWidth" type="number" placeholder="Länge">
+                <input id="inHeight" type="number" placeholder="Breite">
+                <input id="inRating" type="text" placeholder="Bewertung (1-5)">
+                <div class="check">
+                  <label for="inFavourite">Favorit</label>
+                   <input id="inFavourite" type="checkbox">
+                    </div></div>
+                    <br><br>
+                    <div class="container_">
+                    <div class="buttons">
+                      <button id="btnAdd">Foto hinzufügen</button>
+                      <button id="btnDelete1">Foto löschen</button>
+                      <button id="btnDeleteA">Album löschen</button>
+                      <button id="btnRate">Foto bewerten</button>
+                      <button id="btnShowAlbum">Album anzeigen</button>
+                    </div><br><br></div>
+            <div class="container_">
+                <input type="number"  id="inRotate" placeholder="Drehen ">
+                <p> > 0 - im Uhrzeigersinn </p>
+                <p> < 0 - gegen den Uhrzeigersinn</p>
+                <input type="number"  id="inResize" placeholder="Größe ändern (Eingabe in %)">
+                <input type="number"  id="inRatingSearch" min="1" max="5" placeholder="Anzahl der Bewertungen vom Wert X (1-5)">
+            </div>
+            <br><br>
+                    <div class="container_">
+                    <div class="buttons">
+                      <button id="btnRotate">Foto drehen</button>
+                      <button id="btnResize">Größe ändern</button>
+                      <button id="btnShowRating">Bewertungen anzeigen</button>
+                    </div><br><br></div>
+            </div>
+            <div class="container">
+                <p id="output1"></p>
+                <p id="output2"></p>
+            </div>
+            <script src="js/main.js"></script>
+        </body>
+    </html>
+

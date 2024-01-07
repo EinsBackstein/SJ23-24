@@ -28,3 +28,23 @@ input{
   align-items: center;
   justify-content: center;
 }
+.container_{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.check{
+  display: inline-flex;
+  align-items: baseline;
+}
+#inFavourite{
+  margin: 0.4rem;
+}
+
+#output1 {
+  color: rgb(0, 112, 4);
+}
+
+#output2 {
+  color: blue;
+}
