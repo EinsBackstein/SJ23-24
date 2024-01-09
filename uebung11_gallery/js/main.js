@@ -113,6 +113,7 @@ class Photo{
   //methods
 
   //"rotates" the picture 90° left or right (same result)
+  
   rotate(direction){
     if(direction == true || direction == false){
       let width = this.#width;
@@ -209,7 +210,6 @@ function ratePhoto(map,id,number){
     }
   }
   return -1
-  
 }
 
 //deletes every photo in the album
@@ -322,7 +322,6 @@ btnRotate.onclick = function () {
     output2.innerHTML = "";
     output2.innerHTML = "ID konnte nicht gefunden werden";
   }
-  
 }
 
 //resizes a certain photo
@@ -342,7 +341,6 @@ btnResize.onclick = function () {
     output2.innerHTML = "";
     output2.innerHTML = "ID konnte nicht gefunden werden";
   }
-  
 }
 
 //shows all the ratings of a specific value from a certain photo
