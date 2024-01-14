@@ -62,6 +62,8 @@ class Printer{
     }
   }
 
+  //getter
+
   get macAddress(){
     return this.#macAddress;
   }
@@ -84,6 +86,8 @@ class Printer{
     return this.#printResolution;
   }
   
+  //setter
+
   set macAddress(value){
     if(this.#checkMAC(value) == true){
       this.#macAddress = value;
@@ -135,12 +139,19 @@ class Printer{
     }
   }
 
+  //methods (private)
+  
+  //checks if user entered a valid ip-address
+
   #checkIP(IP) {
     let ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/; if (IP.match(ipformat)) {
       return true; 
     } 
     return false; 
   }
+
+  //checks if user entered a valid mac-address
+
   #checkMAC(MAC) {
     let macFormat = /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/;
     if (MAC.match(macFormat)) {
@@ -148,20 +159,34 @@ class Printer{
     }
     return false;
   }
+
+  //public methods
+
+  //prints x amount of pages
+
   printPages(pages){
     if(pages>0 && Number.isInteger(pages) == true && pages <= this.#currentPaper ){
       this.#currentPaper-pages;
     }
   }
+
+  //fills up the printer
+
   fillPrinter(){
     this.#currentPaper = this.#maxPaper;
   }
+
+  //checks, how much paper is in the printer
+
   paperStatus(){
     if(this.#currentPaper > 0){
       return true;
     }
     return false;
   }
+
+  //returns all the infos about the printer
+
   getPrinterInfo(){
     return [
       String(`MAC: ${this.#macAddress}  `),
@@ -180,12 +205,16 @@ Printer.lastOctett = 1
 
 //functions
 
+//checks the user input
+
 function checkInput(input){
   if(input != ''){
     return true;
   }
   return false;
 }
+
+//generates a mac-address
 
 function generateMAC(){
   let hex = "0123456789ABCDEF";
@@ -199,6 +228,8 @@ function generateMAC(){
 }
   return macAddress;
 }
+
+//adds a printer to the map
 
 function addPrinter(map, hostname, ipAddress, maxPaper, printerType, printResolution, colorPrinter){
   let mac = generateMAC();
@@ -218,6 +249,8 @@ const printers = new Map();
 
 //Event Handling
 
+//generates and saves a printer to the map
+
 btnSave.onclick = function(){
 
   if(checkInput(inName.value) == true && checkInput(inMax.value) == true && checkInput(inType.value) == true && checkInput(inRes.value) == true && checkInput(inColor.checked) == true){
@@ -234,6 +267,8 @@ btnSave.onclick = function(){
   return false;
 }
 
+//shows all the printers
+
 btnList.onclick = function(){
   output1.innerHTML = "";
   let output = '';
@@ -242,6 +277,8 @@ btnList.onclick = function(){
   }
   output1.innerHTML = output
 }
+
+//searches for one specific printer
 
 btnSearch.onclick = function(){
   if(checkInput(inMAC.value)==true){
@@ -259,9 +296,13 @@ btnSearch.onclick = function(){
   }
 }
 
+//clears the map
+
 btnClear.onclick = function(){
   confirm("Wollen Sie wirklich alle Drucker aus dem System entfernen?") ? printers.clear() : false;
 }
+
+//edits one specific printer
 
 btnEdit.onclick = function(){
   if(checkInput(inMAC.value)==true){
