@@ -1,0 +1,14 @@
+@startuml Rectangle
+class Rectangle {  
+  + Context ctx  
+  + Number startX  
+  + Number startY  
+  + Number width  
+  + Number height  
+  + Number color  
+  + constructor(ctx, startX, startY, width, height, color)  
+  + draw()  
+  + clear()  
+  + move(deltaX, deltaY)
+}
+@enduml

@@ -1,0 +1,19 @@
+@startuml Console
+class Console{
+  + String brand
+  + String model
+  - String cpu
+  - String memory
+  - String memorySpeed
+  - Number age
+  - Boolean handheld
+  - Number maxFrames
+  - Number timePlayed
+  - Boolean hasBeenOverclocked
+  + constructor(brand, model, memory, memorySpeed, age, handheld, maxFrames)
+  + play(time)
+  + addMemory(value)
+  + overclock()
+}
+@enduml
+
