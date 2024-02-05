@@ -197,7 +197,6 @@ class Printer{
       String(` Druckertyp: ${this.#printerType}`),
       String(` Farbdrucker: ${this.#colorPrinter}`),
       String(` Druckerauflösung: ${this.#printResolution}`),
-
     ]
   }
 }
