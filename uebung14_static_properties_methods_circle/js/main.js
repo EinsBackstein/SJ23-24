@@ -16,8 +16,10 @@ document.getElementById('myHeading').innerText = appName;
 class Circle{
   #color
   #instanceId
+
   static circleInfo = "Die Klasse 'Circle' beinhaltet den Radius sowie X- und Y-Koordinaten des Mittelpunkts, eine Farbe und eine fortlaufende ID";
   static #instanceCounter = 1
+
   constructor(radius, centerX, centerY, color){
     this.radius = radius;
     this.centerX = centerX;
@@ -34,6 +36,10 @@ class Circle{
   
   get instanceId(){
     return this.#instanceId;
+  }
+
+  static get instanceCounter(){
+    return this.#instanceCounter;
   }
 
   //setter
@@ -71,10 +77,10 @@ class Circle{
     if(circleA.radius > circleB.radius){
       return 1
     }
-    if(circleA.radius == circleB.radius){
+    if(circleA.radius < circleB.radius){
       return -1
     }
-    if(circleA.radius < circleB.radius){
+    if(circleA.radius == circleB.radius){
       return 0
     }
   }
@@ -86,12 +92,23 @@ class Circle{
 
 }
 
+//circle objects
 
-//functions
+let circleA = new Circle(10, 50, 50, "red");
+let circleB = new Circle(20, 50, 50, "green");
+let circleC = new Circle(20, 100, 100, "green");
 
+//checks
 
+console.log(circleA.getArea());
+console.log(circleA.getCircumference());
+console.log(circleB.getCircleInfo());
 
-//map
+console.log(Circle.compareCircles(circleA, circleB));
+console.log(Circle.hasSameCenter(circleA, circleB));
+Circle.setCenter(circleA, circleC);
+console.log(circleC.getCircleInfo());
+
 
 
 
