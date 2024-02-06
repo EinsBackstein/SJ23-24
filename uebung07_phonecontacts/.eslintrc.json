@@ -1,9 +1,8 @@
 {
-  "babel-eslint": true,
   "env": {
     "browser": true,
     "node": true,
-    "es6": true,
+    "es2021": true,
     "mocha": true
   },
   "globals": {
@@ -13,14 +12,32 @@
   },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "impliedStrict ": true
+    },
+    "ecmaVersion": 14
   },
   "rules": {
-    "indent": ["warn", 4],
-    "brace-style": ["warn", "1tbs"],
-    "quotes": ["warn", "single"],
-    "semi": ["error", "always"],
-    "no-console": ["off"],
+    "indent": [
+      "warn",
+      2
+    ],
+    "brace-style": [
+      "warn",
+      "1tbs"
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-console": [
+      "off"
+    ],
     "no-unused-vars": [
       "warn",
       {
@@ -30,7 +47,10 @@
   },
   "overrides": [
     {
-      "files": ["*.test.js", "*.spec.js"],
+      "files": [
+        "*.test.js",
+        "*.spec.js"
+      ],
       "rules": {
         "no-unused-expressions": "warn",
         "no-undef": "off"

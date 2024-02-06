@@ -63,16 +63,16 @@ class Car {
     color
   ) {
     //initialisation of all the properties
-      (this.brand = brand),
-      (this.model = model),
-      (this.PS = PS),
-      (this.fuelType = fuelType),
-      (this.maxFuel = maxFuel),
-      (this.consumptionPer100km = consumptionPer100km),
-      (this.gearBox = gearBox),
-      (this.color = color),
-      (this.#currentFuel = maxFuel),
-      (this.#distance = 0);
+    (this.brand = brand),
+    (this.model = model),
+    (this.PS = PS),
+    (this.fuelType = fuelType),
+    (this.maxFuel = maxFuel),
+    (this.consumptionPer100km = consumptionPer100km),
+    (this.gearBox = gearBox),
+    (this.color = color),
+    (this.#currentFuel = maxFuel),
+    (this.#distance = 0);
 
     //array used for expert-task - used to save 10 last drives
     this.kmArray = [];
@@ -185,6 +185,7 @@ class Car {
   //rates the car, if it is very used or not
   getDistanceType() {
     if (this.#distance <= 15000) {
+      return 'neu';
     } else if (this.distance <= 35000) {
       return 'fast wie neu';
     } else if (this.distance <= 70000) {

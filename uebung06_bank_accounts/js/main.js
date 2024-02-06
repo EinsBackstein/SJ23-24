@@ -52,7 +52,7 @@ class BankAccount {
   }
 
   getAccountInfo() {
-//Here all the parameters with their values are getting put into an array and then returned
+    //Here all the parameters with their values are getting put into an array and then returned
     return Array(
       String('Vorname: ' + this.firstName),
       String(' Nachname: ' + this.lastName),
@@ -120,7 +120,7 @@ function everythingPlusX(amount, bankArray) {
 
 function deleteAccountsOfBank(bankName, bankArray) {
   for (let i = 0; i < bankArray.length; i++) {
-    if (account.bankName == bankName) {
+    if (bankArray[i].bankName == bankName) {
       bankArray.splice(i, 1);
     }
   }

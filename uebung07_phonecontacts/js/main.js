@@ -43,9 +43,9 @@ class PhoneContact {
   constructor(firstName, lastName, contactType, phoneNumber) {
     this.id = PhoneContact.id++;
     (this.timesCalled = this.firstName = firstName),
-      (this.lastName = lastName),
-      (this.phoneNumber = phoneNumber),
-      (this.timeSpentInCall = 0);
+    (this.lastName = lastName),
+    (this.phoneNumber = phoneNumber),
+    (this.timeSpentInCall = 0);
     if (contactType == 'privat') {
       this.contactType = 'privat';
     } else if (contactType != 'privat' || contactType == 'geschäftlich') {
@@ -99,7 +99,7 @@ let contactArray = [];
 function getMostCalled(contactArray) {
   let numberOfMostCalls = 0;
   let mostCalledContact;
-  for (i = 0; i < contactArray.length; i++) {
+  for (let i = 0; i < contactArray.length; i++) {
     if (contactArray[i].timesCalled > numberOfMostCalls) {
       numberOfMostCalls = contactArray[i].timesCalled;
       mostCalledContact = contactArray[i];

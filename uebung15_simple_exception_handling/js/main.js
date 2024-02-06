@@ -1,12 +1,12 @@
 /*
-Project: uebung012_printers
+Project: uebung015_simple_exception_handling (Printers)
 Author:  nottj
-Date: 09.01.2023
+Date: 06.02.2023
 */
 
 'use strict';
 
-const appName = 'Übung12 Printers';
+const appName = 'Übung15 uebung015_simple_exception_handling (Printers)';
 document.getElementById('myTitle').innerText = appName;
 document.getElementById('myHeading').innerText = appName;
 

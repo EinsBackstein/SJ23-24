@@ -15,7 +15,8 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "impliedStrict ": true
-    }
+    },
+    "ecmaVersion": 14
   },
   "rules": {
     "indent": [

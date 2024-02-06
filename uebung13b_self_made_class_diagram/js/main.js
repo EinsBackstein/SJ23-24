@@ -14,62 +14,62 @@ document.getElementById('myHeading').innerText = appName;
 
 //inputs
 
-const inBrand = document.getElementById("inBrand");
-const inModel = document.getElementById("inModel");
-const inCPU = document.getElementById("inCPU");
-const inMemory = document.getElementById("inMemory");
-const inMemorySpeed = document.getElementById("inMemorySpeed");
-const inAge = document.getElementById("inAge");
-const inMaxFrames = document.getElementById("inMaxFrames");
-const inHandheld = document.getElementById("inHandheld");
+const inBrand = document.getElementById('inBrand');
+const inModel = document.getElementById('inModel');
+const inCPU = document.getElementById('inCPU');
+const inMemory = document.getElementById('inMemory');
+const inMemorySpeed = document.getElementById('inMemorySpeed');
+const inAge = document.getElementById('inAge');
+const inMaxFrames = document.getElementById('inMaxFrames');
+const inHandheld = document.getElementById('inHandheld');
 
 //buttons
 
-const btnSave = document.getElementById("btnSave");
-const btnList = document.getElementById("btnList");
-const btnClear = document.getElementById("btnClear");
+const btnSave = document.getElementById('btnSave');
+const btnList = document.getElementById('btnList');
+const btnClear = document.getElementById('btnClear');
 
 //outputs
 
-const output1 = document.getElementById("output1");
-const output2 = document.getElementById("output2");
+const output1 = document.getElementById('output1');
+const output2 = document.getElementById('output2');
 
 //class
 
 class Console{
-  #cpu
-  #memory
-  #memorySpeed
-  #age
-  #handheld
-  #maxFrames
-  #timePlayed
-  #hasBeenOverclocked
-  #id
+  #cpu;
+  #memory;
+  #memorySpeed;
+  #age;
+  #handheld;
+  #maxFrames;
+  #timePlayed;
+  #hasBeenOverclocked;
+  #id;
   constructor(brand, model, cpu, memory, memorySpeed, age, handheld, maxFrames){
-    this.brand = brand
-    this.model = model
-    this.cpu = cpu
-    this.memory = memory
-    this.memorySpeed = memorySpeed
-    this.#age = age
-    this.#handheld = handheld
-    this.#maxFrames = maxFrames
-    this.#timePlayed = 0
-    this.#hasBeenOverclocked = false
+    this.brand = brand;
+    this.model = model;
+    this.cpu = cpu;
+    this.memory = memory;
+    this.memorySpeed = memorySpeed;
+    this.#age = age;
+    this.#handheld = handheld;
+    this.#maxFrames = maxFrames;
+    this.#timePlayed = 0;
+    this.#hasBeenOverclocked = false;
     this.#id = Console.ID++;
   }
 
   set cpu(value){
-    if(value == "AMD"|| value == "Intel" || value == "NVIDIA" || value == "Qualcomm"){
+    if(value == 'AMD'|| value == 'Intel' || value == 'NVIDIA' || value == 'Qualcomm'){
       this.#cpu = value;
     }else{
-      this.#cpu = "NVIDIA";
+      this.#cpu = 'NVIDIA';
     }
   }
 
   set memory(value){
-    value = Number(value)
+    value = Number(value);
     if(Math.log2(value).isInteger == true && value >= 128){
       this.#memory = value;
     }else{
@@ -127,10 +127,10 @@ class Console{
     if(time > 1){
       time = Math.floor(time);
       this.#timePlayed += time;
-      return true
+      return true;
     }
-    return false
-  };
+    return false;
+  }
 
   addMemory(value){
     if(Math.log2(value)%2 == 0){
@@ -138,15 +138,15 @@ class Console{
       return true;
     }
     return false;
-  };
+  }
 
   overclock(){
     if(this.#hasBeenOverclocked==false){
       this.#maxFrames *= 1.1;
       return true;
     }
-  return false;
-  };
+    return false;
+  }
 }
 Console.ID = 1;
 
@@ -183,31 +183,31 @@ function showTable(map) {
 
 function getTableRow(value)  {
   return `<tr><td>${value.brand}</td><td>${value.model}</td><td>${value.cpu}</td><td>${value.memory}</td><td>${value.memorySpeed}</td><td>${value.age}</td><td>${value.handheld}</td><td>${value.maxFrames}</td><td>${value.timePlayed}</td><td>${value.id}</td></tr>`;
-  }
+}
 
 //event-handling
 
-  //saves a console to the map
+//saves a console to the map
 
-  btnSave.onclick = function () {
-    let console = new Console(inBrand.value, inModel.value, inCPU.value, inMemory.value, inMemorySpeed.value, inAge.value, inHandheld.checked, inMaxFrames.value);
-    consoleMap.set(console.id, console);
-  };
+btnSave.onclick = function () {
+  let console = new Console(inBrand.value, inModel.value, inCPU.value, inMemory.value, inMemorySpeed.value, inAge.value, inHandheld.checked, inMaxFrames.value);
+  consoleMap.set(console.id, console);
+};
 
-  //deletes everything
+//deletes everything
 
-  btnClear.onclick = function () {
-    let confirmDelete = confirm('Wollen sie alle Konsolen unwiderruflich löschen?');
-    if (confirmDelete == true) {
-      consoleMap.clear();
-    }
-  };
-
-  //lists all consoles
-
-  btnList.onclick = function () {
-    output1.innerHTML = "";
-    output1.innerHTML = showTable(consoleMap)
+btnClear.onclick = function () {
+  let confirmDelete = confirm('Wollen sie alle Konsolen unwiderruflich löschen?');
+  if (confirmDelete == true) {
+    consoleMap.clear();
   }
+};
+
+//lists all consoles
+
+btnList.onclick = function () {
+  output1.innerHTML = '';
+  output1.innerHTML = showTable(consoleMap);
+};
 
 

@@ -14,11 +14,11 @@ document.getElementById('myHeading').innerText = appName;
 //class
 
 class Circle{
-  #color
-  #instanceId
+  #color;
+  #instanceId;
 
-  static circleInfo = "Die Klasse 'Circle' beinhaltet den Radius sowie X- und Y-Koordinaten des Mittelpunkts, eine Farbe und eine fortlaufende ID";
-  static #instanceCounter = 1
+  static circleInfo = 'Die Klasse \'Circle\' beinhaltet den Radius sowie X- und Y-Koordinaten des Mittelpunkts, eine Farbe und eine fortlaufende ID';
+  static #instanceCounter = 1;
 
   constructor(radius, centerX, centerY, color){
     this.radius = radius;
@@ -45,10 +45,10 @@ class Circle{
   //setter
 
   set color(value){
-    if(value == "black" || value == "red" || value == "green"){
-      this.#color = value
+    if(value == 'black' || value == 'red' || value == 'green'){
+      this.#color = value;
     }else{
-      this.#color = "black"
+      this.#color = 'black';
     }
   }
 
@@ -70,18 +70,18 @@ class Circle{
     if(circleA.centerX == circleB.centerX && circleA.centerY == circleB.centerY){
       return true;
     }
-    return false
+    return false;
   }
 
   static compareCircles(circleA, circleB){
     if(circleA.radius > circleB.radius){
-      return 1
+      return 1;
     }
     if(circleA.radius < circleB.radius){
-      return -1
+      return -1;
     }
     if(circleA.radius == circleB.radius){
-      return 0
+      return 0;
     }
   }
 
@@ -94,9 +94,9 @@ class Circle{
 
 //circle objects
 
-let circleA = new Circle(10, 50, 50, "red");
-let circleB = new Circle(20, 50, 50, "green");
-let circleC = new Circle(20, 100, 100, "green");
+let circleA = new Circle(10, 50, 50, 'red');
+let circleB = new Circle(20, 50, 50, 'green');
+let circleC = new Circle(20, 100, 100, 'green');
 
 //checks
 

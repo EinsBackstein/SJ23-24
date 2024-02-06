@@ -59,7 +59,7 @@ class Line {
     this.xEnd = xEnd;
     this.yStart = yStart;
     this.yEnd = yEnd;
-    this.strokeStyle = color
+    this.strokeStyle = color;
   }
   draw() {
     this.context.beginPath();
@@ -88,7 +88,7 @@ class Rect {
     this.width = width;
     this.height = height;
     this.fillColor = inputColor.value;
-    this.strokeColor = strokeColor.value
+    this.strokeColor = strokeColor.value;
   }
   draw(){
     ctx.fillStyle=this.fillColor;
@@ -130,13 +130,13 @@ class Triangle {
     let lenghtSide2 = Math.sqrt((((this.x3-this.x2)*(this.x3-this.x2))+((this.y3-this.y2)*(this.y3-this.y2))));
     let lengthSide3 = Math.sqrt((((this.x1-this.x3)*(this.x1-this.x3))+((this.y1-this.y3)*(this.y1-this.y3))));
 
-    if(lenghtSide1==lenghtSide2&&lengthSide1==lengthSide3){
+    if(lengthSide1==lenghtSide2&&lengthSide1==lengthSide3){
       return 1;
-    };
-    if(lenghtSide1==lenghtSide2||lengthSide1==lengthSide3||lenghtSide2==lengthSide3){
-      return -1
     }
-    return 0
+    if(lengthSide1==lenghtSide2||lengthSide1==lengthSide3||lenghtSide2==lengthSide3){
+      return -1;
+    }
+    return 0;
   }
 }
 
@@ -160,9 +160,9 @@ btnDraw.onclick = function () {
 
   //Here the three lines are getting drawn
 
-  const line1 = new Line(ctx,10,600, 10,600, "green");
-  const line2 = new Line(ctx, 50,50,80,600, "blue");
-  const line3 = new Line(ctx, 50,500,20,20, "red");
+  const line1 = new Line(ctx,10,600, 10,600, 'green');
+  const line2 = new Line(ctx, 50,50,80,600, 'blue');
+  const line3 = new Line(ctx, 50,500,20,20, 'red');
   line1.draw();
   line2.draw();
   line3.draw();
@@ -177,11 +177,11 @@ btnDraw.onclick = function () {
   
 
   const trinagle1 = new Triangle(ctx,400,40,500,100,300,100);
-  trinagle1.draw()
+  trinagle1.draw();
   const trinagle2 = new Triangle(ctx,600,100,650,200,550,200);
-  trinagle2.draw()
+  trinagle2.draw();
   const trinagle3 = new Triangle(ctx,250,400,300,600,200,600);
-  trinagle3.draw()
+  trinagle3.draw();
 };
 
 

@@ -39,12 +39,12 @@ class Album {
   #year;
   #rating;
   constructor(title, interpret, length, year, rating) {
-      (this.#id = Album.id++),
-      (this.title = title),
-      (this.length = length),
-      (this.year = year),
-      (this.rating = rating),
-      (this.interpret = interpret);
+    (this.#id = Album.id++),
+    (this.title = title),
+    (this.length = length),
+    (this.year = year),
+    (this.rating = rating),
+    (this.interpret = interpret);
   }
 
   //setter
@@ -102,7 +102,7 @@ Album.id = 100;
 
 function getTableRow(album)  {
 
-return `<tr><td>${album.title}</td><td>${album.interpret}</td><td>${album.year}</td><td>${album.length}</td><td>${album.rating}</td><td>${album.id}</td></tr>`;
+  return `<tr><td>${album.title}</td><td>${album.interpret}</td><td>${album.year}</td><td>${album.length}</td><td>${album.rating}</td><td>${album.id}</td></tr>`;
 }
 
 //shows a table in the GUI with all the albums or just with the albums of a specific interpret
@@ -127,9 +127,9 @@ function showTable(array, interpret) {
   } else {
     for (let album of array) {
       table += getTableRow(album);
+    }
+    return table;
   }
-  return table;
-}
 }
 
 //Main-Code execution
@@ -158,7 +158,7 @@ buttonClearList.onclick = function () {
   if (confirmDelete == true) {
     albumArray = [];
   }
-  output2.innerHTML = showTable(albumArray,'')
+  output2.innerHTML = showTable(albumArray,'');
 };
 
 buttonSearch.onclick = function () {

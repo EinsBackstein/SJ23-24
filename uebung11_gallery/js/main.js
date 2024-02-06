@@ -14,49 +14,49 @@ document.getElementById('myHeading').innerText = appName;
 
 //inputs
 
-const inId = document.getElementById("inId");
-const inTitle = document.getElementById("inTitle");
-const inWidth = document.getElementById("inWidth");
-const inHeight = document.getElementById("inHeight");
-const inRating = document.getElementById("inRating");
-const inFavourite = document.getElementById("inFavourite");
-const inRotate = document.getElementById("inRotate");
-const inResize = document.getElementById("inResize");
-const inRatingSearch = document.getElementById("inRatingSearch");
+const inId = document.getElementById('inId');
+const inTitle = document.getElementById('inTitle');
+const inWidth = document.getElementById('inWidth');
+const inHeight = document.getElementById('inHeight');
+const inRating = document.getElementById('inRating');
+const inFavourite = document.getElementById('inFavourite');
+const inRotate = document.getElementById('inRotate');
+const inResize = document.getElementById('inResize');
+const inRatingSearch = document.getElementById('inRatingSearch');
 
 
 //buttons
 
-const btnAdd = document.getElementById("btnAdd");
-const btnDelete1 = document.getElementById("btnDelete1");
-const btnDeleteA = document.getElementById("btnDeleteA");
-const btnRate = document.getElementById("btnRate");
-const btnRotate = document.getElementById("btnRotate");
-const btnResize = document.getElementById("btnResize");
-const btnShowRating = document.getElementById("btnShowRating");
-const btnShowAlbum = document.getElementById("btnShowAlbum");
+const btnAdd = document.getElementById('btnAdd');
+const btnDelete1 = document.getElementById('btnDelete1');
+const btnDeleteA = document.getElementById('btnDeleteA');
+const btnRate = document.getElementById('btnRate');
+const btnRotate = document.getElementById('btnRotate');
+const btnResize = document.getElementById('btnResize');
+const btnShowRating = document.getElementById('btnShowRating');
+const btnShowAlbum = document.getElementById('btnShowAlbum');
 
 //outputs
 
-const output1 = document.getElementById("output1");
-const output2 = document.getElementById("output2");
+const output1 = document.getElementById('output1');
+const output2 = document.getElementById('output2');
 
 //class
 
 class Photo{
-  #id
-  #rating
-  #size
-  #title
-  #width
-  #height
+  #id;
+  #rating;
+  #size;
+  #title;
+  #width;
+  #height;
   constructor(title, width, height, isFavourite, id){
     this.#id = id;
     this.title = title;
     this.width = width;
     this.height = height;
     this.isFavourite = isFavourite;
-    this.#size = (`${this.#width}x${this.#height}`)
+    this.#size = (`${this.#width}x${this.#height}`);
     this.#rating = [];
   }
 
@@ -90,22 +90,20 @@ class Photo{
     if(value != ''){
       this.#title = value;
     }else{
-      this.#title = 'unknown'
+      this.#title = 'unknown';
     }
   }
   set width(value){
     if(value >= 200 && value <= 4600){
       this.#width = value;
-    }
-    else{
-      this.#width = 1800
+    } else{
+      this.#width = 1800;
     }
   }
   set height(value){
     if(value >= 200 && value <= 4600){
       this.#height = value;
-    }
-    else{
+    } else{
       this.#height = this.#width*0.75;
     }
   }
@@ -120,10 +118,10 @@ class Photo{
       let height = this.#height;
       this.#width = height;
       this.#height = width;
-      this.#size = (`${this.#width}x${this.#height}`)
+      this.#size = (`${this.#width}x${this.#height}`);
       return 1;
     }
-    return -1
+    return -1;
   }
 
   //resizes the picture by a certain percentage
@@ -131,9 +129,9 @@ class Photo{
   resize(percent){
     percent = Number(percent);
     if(percent >= 20 && percent <= 500){
-      this.#width *= (percent/100)
-      this.#height *= (percent/100)
-      this.#size = (`${this.#width}x${this.#height}`)
+      this.#width *= (percent/100);
+      this.#height *= (percent/100);
+      this.#size = (`${this.#width}x${this.#height}`);
       return 1;
     }
     return -1;
@@ -142,7 +140,7 @@ class Photo{
   //adds a rating to the picture, stored in the rating-Array
 
   rate(rateNumber){
-    let num = Number(rateNumber)
+    let num = Number(rateNumber);
     if(Number.isInteger(num)==true && num >= 1 && num <= 5){
       this.#rating.push(rateNumber);
       return 1;
@@ -156,7 +154,7 @@ class Photo{
     let i = 0;
     for(let entry of this.#rating){
       if(entry == rateNum)
-      i++;
+        i++;
     }
     return i;
   }
@@ -170,7 +168,7 @@ class Photo{
       String(` Größe: ${this.#size}`),
       String(` Favorit: ${this.isFavourite}`),
       String(` Bewertungen: ${this.#rating}`),
-    ]
+    ];
   }
 }
 
@@ -180,11 +178,11 @@ class Photo{
 
 function addPhoto(title, width, height, isFavourite, id, map){
   if(checkId(map, id)==1){
-    let photo = new Photo(title, width, height, Boolean(isFavourite), id)
-    map.set(photo.id, photo)
-    return 1
+    let photo = new Photo(title, width, height, Boolean(isFavourite), id);
+    map.set(photo.id, photo);
+    return 1;
   }
-  return -1
+  return -1;
 }
 
 //removes a photo from the map
@@ -192,9 +190,9 @@ function addPhoto(title, width, height, isFavourite, id, map){
 function removePhoto(id,map){
   if(map.has(id)){
     map.delete(id);
-    return 1
+    return 1;
   }
-return -1
+  return -1;
 }
 
 //rates a photo using the rate-method
@@ -202,20 +200,20 @@ return -1
 function ratePhoto(map,id,number){
   for(let [key, value] of map.entries()){
     if(key == id){
-      let rating = value.rate(number)
+      let rating = value.rate(number);
       if(rating == -1){
-        return -2
+        return -2;
       }
-      return 1
+      return 1;
     }
   }
-  return -1
+  return -1;
 }
 
 //deletes every photo in the album
 
 function clearAlbum(map){
-  confirm("Wollen Sie das Fotoalbum wirklich löschen?") ? map.clear() : -1;
+  confirm('Wollen Sie das Fotoalbum wirklich löschen?') ? map.clear() : -1;
 }
 
 //checks if an id has already been used before
@@ -238,61 +236,61 @@ const gallery = new Map();
 //shows all the photos in the album
 
 btnShowAlbum.onclick = function () {
-  output1.innerHTML = "";
+  output1.innerHTML = '';
   let output = '';
   for(let value of gallery.values()){
     output = output + '<br>' + value.getPhotoInfo();
   }
-  output1.innerHTML = output
-}
+  output1.innerHTML = output;
+};
 
 //adds a photo with all its parameters to the album
 
 btnAdd.onclick = function () {
-  let adding = addPhoto(inTitle.value, inWidth.value, inHeight.value, inFavourite.checked, inId.value, gallery)
+  let adding = addPhoto(inTitle.value, inWidth.value, inHeight.value, inFavourite.checked, inId.value, gallery);
   if(adding == 1){
-    output2.innerHTML = "";
-    output2.innerHTML = "Hinzufügen erfolgreich";
+    output2.innerHTML = '';
+    output2.innerHTML = 'Hinzufügen erfolgreich';
   }else if(adding == -1){
-    output2.innerHTML = "";
-    output2.innerHTML = "Fehler beim Hinzufügen des Fotos (Wahrscheinliche doppelte Vergabe der ID)";
+    output2.innerHTML = '';
+    output2.innerHTML = 'Fehler beim Hinzufügen des Fotos (Wahrscheinliche doppelte Vergabe der ID)';
   }
-}
+};
 
 //deletes one specific photo
 
 btnDelete1.onclick = function () {
-  let removal = removePhoto(inId.value, gallery)
+  let removal = removePhoto(inId.value, gallery);
   if(removal == 1){
-    output2.innerHTML = "";
-    output2.innerHTML = "Löschen erfolgreich";
+    output2.innerHTML = '';
+    output2.innerHTML = 'Löschen erfolgreich';
   }else if(removal == -1){
-    output2.innerHTML = "";
-    output2.innerHTML = "Fehler beim Löschen des Fotos (ID nicht vorhanden)";
+    output2.innerHTML = '';
+    output2.innerHTML = 'Fehler beim Löschen des Fotos (ID nicht vorhanden)';
   }
-}
+};
 
 //deletes all the photos
 
 btnDeleteA.onclick = function () {
-  clearAlbum(gallery)
-}
+  clearAlbum(gallery);
+};
 
 //rates a certain photo
 
 btnRate.onclick = function () {
   let rating = ratePhoto(gallery, inId.value,inRating.value);
   if(rating == 1){
-    output2.innerHTML = "";
-    output2.innerHTML = "Bewertung erfolgreich";
+    output2.innerHTML = '';
+    output2.innerHTML = 'Bewertung erfolgreich';
   }else if(rating == -1){
-    output2.innerHTML = "";
-    output2.innerHTML = "ID konnte nicht gefunden werden";
+    output2.innerHTML = '';
+    output2.innerHTML = 'ID konnte nicht gefunden werden';
   }else if(rating == -2){
-    output2.innerHTML = "";
-    output2.innerHTML = "Ungültige Eingabe bei der Bewertung";
+    output2.innerHTML = '';
+    output2.innerHTML = 'Ungültige Eingabe bei der Bewertung';
   }
-}
+};
 
 //rotates a certain photo
 
@@ -302,27 +300,27 @@ btnRotate.onclick = function () {
     if(Number(inRotate.value) > 0){
       let rotation = photo.rotate(true);
       if(rotation == 1){
-        output2.innerHTML = "";
-        output2.innerHTML = "Drehen erfolgreich";
+        output2.innerHTML = '';
+        output2.innerHTML = 'Drehen erfolgreich';
       }else if(rotation == -1){
-        output2.innerHTML = "";
-        output2.innerHTML = "Drehen nicht erfolgreich";
+        output2.innerHTML = '';
+        output2.innerHTML = 'Drehen nicht erfolgreich';
       }
     }else if(Number(inRotate.value) < 0){
       let rotation = photo.rotate(false);
       if(rotation == 1){
-        output2.innerHTML = "";
-        output2.innerHTML = "Drehen erfolgreich";
+        output2.innerHTML = '';
+        output2.innerHTML = 'Drehen erfolgreich';
       }else if(rotation == -1){
-        output2.innerHTML = "";
-        output2.innerHTML = "Drehen nicht erfolgreich";
+        output2.innerHTML = '';
+        output2.innerHTML = 'Drehen nicht erfolgreich';
       }
     }
   }else{
-    output2.innerHTML = "";
-    output2.innerHTML = "ID konnte nicht gefunden werden";
+    output2.innerHTML = '';
+    output2.innerHTML = 'ID konnte nicht gefunden werden';
   }
-}
+};
 
 //resizes a certain photo
 
@@ -331,17 +329,17 @@ btnResize.onclick = function () {
     let photo = gallery.get(inId.value);
     let resizing = photo.resize(Number(inResize.value));
     if(resizing == 1){
-      output2.innerHTML = "";
-      output2.innerHTML = "Größe ändern erfolgreich";
+      output2.innerHTML = '';
+      output2.innerHTML = 'Größe ändern erfolgreich';
     }else if(resizing == -1){
-      output2.innerHTML = "";
-      output2.innerHTML = "Größe ändern nicht erfolgreich";
+      output2.innerHTML = '';
+      output2.innerHTML = 'Größe ändern nicht erfolgreich';
     }
   }else{
-    output2.innerHTML = "";
-    output2.innerHTML = "ID konnte nicht gefunden werden";
+    output2.innerHTML = '';
+    output2.innerHTML = 'ID konnte nicht gefunden werden';
   }
-}
+};
 
 //shows all the ratings of a specific value from a certain photo
 
@@ -350,4 +348,4 @@ btnShowRating.onclick = function () {
     let photo = gallery.get(inId.value);
     photo.countRating(inRatingSearch.value);
   }
-}
+};
