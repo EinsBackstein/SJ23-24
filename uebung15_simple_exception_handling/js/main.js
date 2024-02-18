@@ -40,6 +40,28 @@ const output2 = document.getElementById('output2');
 
 //class
 
+//error-class
+class PrinterError{
+  #code;
+  #name;
+  #message;
+  constructor(code, name, message){
+    this.#code = code;
+    this.#name = name;
+    this.#message = message;
+  }
+  get code(){
+    return this.#code;
+  }
+  get name(){
+    return this.#name;
+  }
+  get message(){
+    return this.#message;
+  }
+}
+
+//printer-class
 class Printer{
   #macAddress;
   #ipAddress;
@@ -91,40 +113,43 @@ class Printer{
   set macAddress(value){
     if(this.#checkMAC(value) == true){
       this.#macAddress = value;
+    }else{
+      throw new PrinterError(607,'invalid_MAC','Keine valide MAC-Adresse eingegeben');
     }
   }
   set ipAddress(value){
     if(this.#checkIP(value)==true){
       this.#ipAddress = value;
     }else{
-      this.#ipAddress = `192.168.1.${Printer.lastOctett}`;
-      Printer.lastOctett++;
+      throw new PrinterError(608, 'invalid_IP', 'Input ist keine valide IPv4 Adresse');
     }
   }
   set maxPaper(value){
     if(value <= 1500 && value >= 50){
       this.#maxPaper = value;
     }else{
-      this.#maxPaper = 500;
+      throw new PrinterError(609,'invalid_maxP','Invalide Eingabe bei maximaler Papierkapazität. Muss zwischen 50 und 1500 liegen');
     }
   }
   set printerType(value){
     if(value == 'Laser' || value == 'InkJet' || value == 'ColorLaser'){
       this.#printerType = value;
     }else{
-      this.#colorPrinter = 'InkJet';
+      throw new PrinterError(610,'invalid_PrinterType','Unbekannter Druckertyp (Laser, InkJet, ColorLaser)');
     }
   }
   set currentPaper(value){
     if(value <= this.#maxPaper){
       this.#currentPaper = value;
+    }else{
+      throw new PrinterError(611,'invalid_currentP','Invalide Eingabe bei aktuellem Füllstand. Darf nicht größer sein als der aktuelle Füllstand');
     }
   }
   set colorPrinter(value){
     if(value == true || value == false){
       this.#colorPrinter = value;
     }else{
-      this.#colorPrinter = true;
+      throw new PrinterError(612,'wrong_datatype_color','Eingabe darf nur vom Datentypen Boolean sein');
     }
   }
   set printResolution(value){
@@ -132,7 +157,7 @@ class Printer{
     if(value >= 300 && value <= 2400){
       this.#printResolution = value;
     }else{
-      this.#printResolution = 1200;
+      throw new PrinterError(613,'invalid_res','Invalide Eingabe bei der Druckerauflösung. Eingabe muss zwischen 300 und 2400 liegen');
     }
   }
 
@@ -248,19 +273,16 @@ const printers = new Map();
 //generates and saves a printer to the map
 
 btnSave.onclick = function(){
-
-  if(checkInput(inName.value) == true && checkInput(inMax.value) == true && checkInput(inType.value) == true && checkInput(inRes.value) == true && checkInput(inColor.checked) == true){
-
+  try {
     addPrinter(printers, inName.value, inIP.value, inMax.value, inType.value, inRes.value, inColor.checked);
     output2.innerHTML='';
     output2.innerHTML = 'Drucker erfolgreich hinzugefügt';
-    
     inputs.value = '';
-    return true;
+  } catch (err) {
+    alert(`code ${err.code}, ${err.name}: ${err.message}`);
+    output2.innerHTML='';
+    output2.innerHTML = 'Drucker konnte nicht hinzugefügt werden';
   }
-  output2.innerHTML='';
-  output2.innerHTML = 'Drucker konnte nicht hinzugefügt werden';
-  return false;
 };
 
 //shows all the printers
