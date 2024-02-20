@@ -13,14 +13,14 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "editor.mouseWheelZoom": true,
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "git.enableSmartCommit": true,
   "window.zoomLevel": 1,
   "editor.renderWhitespace": "all",
   "editor.renderControlCharacters": true,
   "breadcrumbs.enabled": true,
   "emmet.triggerExpansionOnTab": true,
-  "editor.fontFamily": "Fira Code Medium, Hack, Monaco, Menlo, Consolas, 'Droid Sans Mono', 'Inconsolata', 'Courier New', monospace",
+  "editor.fontFamily": "Fira Code Medium,Hack, Monaco, Menlo, Consolas, 'Droid Sans Mono', 'Inconsolata', 'Courier New', monospace",
   "editor.fontLigatures": true,
   "php.suggest.basic": false,
   "emmet.includeLanguages": {
@@ -34,7 +34,7 @@
       "args": ["-NoProfile"]
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.windows": "my-pwsh",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": false,
