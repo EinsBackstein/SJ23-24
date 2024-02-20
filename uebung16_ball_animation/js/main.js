@@ -22,22 +22,29 @@ ctx.fillRect(0, 0, myCanvas.width, myCanvas.height); //creates a rectangle and f
 ctx.strokeStyle = 'black';
 ctx.strokeRect(0, 0, myCanvas.width, myCanvas.height); //creates a black border around the canvas
 
+
+//class Ball
 class Ball{
+  //The Ball has X- and Y-coords, a radius, a speed in X- and Y-directions, a value for both starting directions and a color
   constructor(posX, posY, radius, speedX, speedY, directionHorizontal, directionVertical, color){
     this.posX = posX;
     this.posY = posY;
     this.radius = radius;
     this.speedX = speedX;
-    this.speedY = speedY
+    this.speedY = speedY;
     this.directionHorizontal = directionHorizontal; // 1||-1
     this.directionVertical = directionVertical; // 1||-1
     this.color = color;
   }
 
+
+  //calculates the "next" Ball
   setNextPosition(){
     this.posX = this.posX+this.speedX*this.directionHorizontal;
     this.posY = this.posY+this.speedY*this.directionVertical;
   }
+
+  //collider
   setDirection(){
     if(this.posX + this.radius >= myCanvas.width || this.posX - this.radius <= 0){
       this.directionHorizontal*=-1;
@@ -46,6 +53,8 @@ class Ball{
       this.directionVertical*=-1;
     }
   }
+
+  //draws the circle
   draw(context){
     ctx.beginPath();
     context.fillStyle = this.color;
@@ -57,6 +66,8 @@ class Ball{
 
 let circle = new Ball(300,80,10,5,2,1,1,'cyan');
 
+
+//cleans the canvas
 function emptyCanvas(){
   ctx.fillStyle = 'white'; //sets color to black
   ctx.fillRect(0, 0, myCanvas.width, myCanvas.height); //creates a rectangle and fills it with a white color
@@ -64,6 +75,8 @@ function emptyCanvas(){
   ctx.strokeRect(0, 0, myCanvas.width, myCanvas.height); //creates a black border around the canvas
 }
 
+
+//loop - creates the animation
 function loop(){
   emptyCanvas();
   circle.draw(ctx);
@@ -73,4 +86,6 @@ function loop(){
   window.requestAnimationFrame(loop);
 }
 
+
+//execution
 loop();
