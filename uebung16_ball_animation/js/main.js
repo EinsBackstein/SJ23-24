@@ -1,6 +1,6 @@
-/* Project: uebung02a_zeichnen_mit_canvas_basis
+/* Project: uebung1
 Author:  nottj
-Date: 19.10.2022 */
+Date: 26.02.2024 */
 
 'use strict';
 const appName = 'uebung02a_zeichnen_mit_canvas_basis';
@@ -49,14 +49,14 @@ class Ball{
     if(this.posX + this.radius >= myCanvas.width || this.posX - this.radius <= 0){
       this.directionHorizontal*=-1;
     }
-    if(this.posY + this.radius == myCanvas.height || this.posY - this.radius == 0){
+    if(this.posY + this.radius >= myCanvas.height || this.posY - this.radius <= 0){
       this.directionVertical*=-1;
     }
   }
 
   //draws the circle
   draw(context){
-    ctx.beginPath();
+    context.beginPath();
     context.fillStyle = this.color;
     context.arc(this.posX,this.posY,this.radius,0, 2*Math.PI, true);
     context.fill();
@@ -64,7 +64,7 @@ class Ball{
   }
 }
 
-let circle = new Ball(300,80,10,5,2,1,1,'cyan');
+let circle = new Ball(300,80,10,2,5,1,1,'cyan');
 
 
 //cleans the canvas
