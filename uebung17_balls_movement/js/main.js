@@ -12,8 +12,8 @@ document
   .innerText = appName;
 
 let myCanvas = document.getElementById('myCanvas'); // Canvas the area you draw in
-myCanvas.width = 1000; //width of the canvas (in pixel)
-myCanvas.height = 1000; //height of the canvas (in pixel)
+myCanvas.width = 800; //width of the canvas (in pixel)
+myCanvas.height = 800; //height of the canvas (in pixel)
 
 let ctx = myCanvas.getContext('2d'); // ctx is short for 'Context' and is the drawing level
 
