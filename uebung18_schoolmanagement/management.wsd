@@ -1,0 +1,26 @@
+@startuml Schoolmanagement
+
+class Student{
+  - Number idCounter
+  - Number id
+  + constructor()
+  + getIdCounter
+}
+
+class SchoolClass{
+  - String className
+  - Object Students
+  - Number maxStudents
+  + constructor(className, maxStudents)
+  + getClassName()
+  + getStudents()
+  + getMaxStudents()
+  + addStudent(student)
+  + getStudent(id)
+  + removeStudent(id)
+  + findStudent(firstname, lastname)
+  + clear()
+  + getStudentTable()
+}
+
+@enduml

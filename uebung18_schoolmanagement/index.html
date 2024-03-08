@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="google" content="notranslate" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title id="myTitle">uebung18_schoolmanagement</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1 id="myHeading1">Übung 18 - School-Management
+    </h1>
+    <div class="jumbotron">
+      <div class="form-group">
+        <label for="inputFirstname">Vorname</label>
+        <input type="text" class="form-control" id="inputFirstname" placeholder="Gib den Vornamen ein" />
+      </div>
+      <div class="form-group">
+        <label for="inputLastname">Nachname</label>
+        <input type="text" class="form-control" id="inputLastname" placeholder="Gib den Nachnamen ein" />
+      </div>
+      <div class="form-group">
+        <label for="inputBirthDate">Geburtsdatum</label>
+        <input type="date" class="form-control" id="inputBirthDate" placeholder="Gib das Geburtsdatum ein" />
+      </div>
+      <div><button id="btnSave">Hinzufügen</button>
+            <button id="btnShow">Alle anzeigen</button>
+            <button id="btnClear">Alle löschen</button>
+        </div>
+      <div class="form-group">
+          <br><br>
+        <label for="inputID">Studentensuche über die ID:</label>
+        <input type="text" class="form-control" id="inputID" placeholder="Gib die ID des Studenten ein" />
+      </div>
+      
+      <div><button id="btnSearch">Student suchen</button></div>
+    </div>
+    <div class="jumbotron">
+      <div id="messages"></div>
+    </div>
+    <div class="jumbotron">
+      <table id="output">
+        
+      </table>
+    </div>   
+    <div class="jumbotron">
+      <div id="error"></div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
