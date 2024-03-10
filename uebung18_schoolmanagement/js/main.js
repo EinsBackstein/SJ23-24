@@ -1,6 +1,6 @@
-/* Project: uebung17_school_management
+/* Project: uebung18_school_management
 Author:  nottj
-Date: 28.02.2024 */
+Date: 05.04.2024 */
 
 'use strict';
 const appName = 'uebung18 School-Management';
