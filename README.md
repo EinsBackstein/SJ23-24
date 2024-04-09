@@ -25,3 +25,7 @@
 - [Übung17_ball_movement](uebung17_ball_movement)
 - [uebung18_schoolmanagement](uebung18_schoolmanagement)
 - [uebung19_network_switch](uebung19_network_switch)
+
+---
+
+`git push github main && git push origin main`
