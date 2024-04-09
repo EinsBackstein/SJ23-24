@@ -28,6 +28,6 @@
 
 ---
 
-```console
+```Bash
 git push github main && git push origin main
 ```
