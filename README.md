@@ -23,3 +23,5 @@
 - [Übung15_simple_exception_handling](uebung15_simple_exception_handling)
 - [Übung16_ball_animation](uebung16_ball_animation)
 - [Übung17_ball_movement](uebung17_ball_movement)
+- [uebung18_schoolmanagement](uebung18_schoolmanagement)
+- [uebung19_network_switch](uebung19_network_switch)
