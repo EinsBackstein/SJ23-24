@@ -56,13 +56,13 @@ playerArray.sort((p1, p2) => p1.age - p2.age);
 
 //filter
 
-let filterByRole = playerArray.filter(p => p.position == "Stürmer");
+let filterByRole = playerArray.filter(p => p.position == 'Sturm');
 let filterByAge = playerArray.filter(p => p.age <= 28);
-let filterByPosAndWeight = playerArray.filter(p => p.weight <= 70 && p.position != "Mittelfeld");
+let filterByPosAndWeight = playerArray.filter(p => p.weight <= 70 && p.position != 'Mittelfeld');
 
 //map
 
-let defenders = playerArray.map(p => p.position == "Verteidiger");
+let defenders = playerArray.map(p => p.position == 'Verteidiger');
 let players = playerArray.map(p => p.firstName).filter(p => p.age >= 21 && p.playerNumber <= 45 & p.playerNumber >= 10);
 
 //reduce
