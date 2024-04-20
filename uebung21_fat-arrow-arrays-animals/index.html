@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="google" content="notranslate"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title id="myTitle">Template</title>
+    </head>
+    <body>
+        <div class="container">
+            <header
+                id="page-header"
+                class="bg-dark text-white col-sm-12"
+                style="border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px">
+                <h1 id="myHeading" class="text-center">fooHeading</h1>
+            </header>
+            <div class="container_"><br>
+                <input type="text" placeholder="Druckername" id="inName">
+                <input type="text" placeholder="IP-Adresse" id="inIP">
+                <input type="text" placeholder="Maximaler Füllstand (Blätter)" id="inMax">
+                <input type="text" placeholder="Art des Druckers (Laser, ColorLaser oder InkJet)" id="inType">
+                <input type="number" placeholder="Druckerauflösung" id="inRes">
+                <div class="check">
+                  <label for="inColor">Farbdrucker </label>
+                  <input type="checkbox" id="inColor">
+                    </div></div>
+                    <br><br>
+                    <div class="container_">
+                    <div class="buttons">
+                      <button id="btnSave">Speichern</button>
+                      <button id="btnList">Alle Anzeigen</button>
+                      <button id="btnSearch">Suchen</button>
+                      <button id="btnClear">Löschen</button>
+                      <button id="btnEdit">Bearbeiten</button>
+                   </div><br><br></div>
+            <div class="container_">
+                <input type="text" placeholder="MAC-Eingabe (für Suche und Bearbeiten)" id="inMAC">
+            </div>
+            <br><br>
+                    <div class="container_">
+                    <div class="buttons">
+                    </div><br><br></div>
+            </div>
+            <div class="container">
+                <p id="output1"></p>
+                <p id="output2"></p>
+            </div>
+            <script type="module" src="js/main.js"></script>
+        </body>
+    </html>
+

@@ -33,20 +33,34 @@ let playerArray = [p1,p2,p3,p4,p5];
 //sort
 
 function sortPlayersByName(p1, p2){
-  return p1.firstName.localCompare(p2.firstName);
+  return p1.firstName.localeCompare(p2.firstName);
 }
 playerArray.sort(sortPlayersByName);
 
 playerArray.sort(function(p1,p2){
-  return p1.firstName.localCompare(p2.firstName);
+  return p1.firstName.localeCompare(p2.firstName);
 });
 
-playerArray.sort((p1,p2) => p1.firstName.localCompare(p2.firstName));
+console.log(playerArray.sort((p1,p2) => p1.firstName.localeCompare(p2.firstName)));
+
+
 
 function sortPlayerByAge(array){
   return array.sort((a, b) => b.age - a.age);
 }
 sortPlayerByAge(playerArray);
+
+function compareAge(p1, p2) {
+    return p1.age - p2.age;
+
+}
+
+playerArray.sort(compareAge);
+
+playerArray.sort(function (p1, p2) {
+  return p1.age - p2.age;
+});
+
 
 playerArray.sort(function(p1,p2){
   p1.age-p2.age;
@@ -77,4 +91,6 @@ let averageAge = playerArray.reduce(function(sum, player){
   return sum+player.age;
 })/playerArray.length;
 
-let avrgAge = playerArray.reduce((sum, player) => sum + player.age)/playerArray.length;
+let avrgAge = playerArray.reduce((sum, player) => sum + player.age,0)/playerArray.length;
+
+console.log(avrgAge);
