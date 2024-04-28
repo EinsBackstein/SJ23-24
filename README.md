@@ -35,3 +35,4 @@ git push github main && git push origin main
 - [uebung20a_fat_arrow_examples](uebung20a_fat_arrow_examples)
 - [uebung20b_soccerplayer](uebung20b_soccerplayer)
 - [uebung21_fat-arrow-arrays-animals](uebung21_fat-arrow-arrays-animals)
+- [uebung22_powermanagement](uebung22_powermanagement)

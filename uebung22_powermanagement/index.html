@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="google" content="notranslate"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title id="myTitle">Template</title>
+    </head>
+    <body>
+        <div class="container">
+            <header
+                id="page-header"
+                class="bg-dark text-white col-sm-12"
+                style="
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        ">
+                <h1 id="myHeading" class="text-center">fooHeading</h1>
+            </header>
+
+            <div class="container_">
+                <div class="cont">
+                    <!-- create new machine -->
+                    <h3>Create new machine</h3>
+
+                    <div class="cont2">
+
+                        <p>Name:</p>
+                        <input id="inCreateName" type="text" placeholder="Enter machine name">
+
+                        <p>Power:</p>
+                        <input id="inCreatePower" type="text" placeholder="Enter power (in watts)">
+
+                        <p>Hours:</p>
+                        <input id="inCreateHours" type="text" placeholder="Enter working hours">
+
+                        <button id="btnCreate">
+                            Create
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="cont">
+                    <!-- run Machine -->
+
+                    <h3>Run machine</h3>
+
+                    <div class="cont2">
+
+                        <p>Name:</p>
+                        <input id="inRunName" type="text" placeholder="Machine to run">
+
+                        <p>Hours:</p>
+                        <input id="inRunHours" type="text" placeholder="Hours to run">
+
+                        <button id="btnRun">
+                            Run
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="cont">
+                    <!-- delete machine -->
+
+                    <h3>Delete machine</h3>
+
+                    <div class="cont2">
+
+                        <p>Name:</p>
+                        <input id="inDelete" type="text" placeholder="Machine to delete">
+
+                        <button id="btnDelete">
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+                <br><br><br><br>
+                <div class="cont3">
+                    <!-- search -->
+
+                        <p>All machines</p>
+                        <button id="btnSearchA">Go!</button>
+                    
+                        <p>All machine names</p>
+                        <button id="btnSearchNames">Go!</button>
+                    
+                        <p>All machines with power greater than  <input id="inSearchPower" type="text" placeholder="Enter power"> watts </p>
+                        <button id="btnSearchPower">Go!</button>
+                    
+                        <p>All machine names containing <input id="inSearchLetters"  type="text" placeholder="Enter some letters - (min. 3)" >  </p>
+                        <button id="btnSearchLetters">Go!</button>
+                    
+                        <p>Average power of all machines</p>
+                        <button id="btnSearchAveragePower">Go!</button>
+                    
+                        <p>Machines sorted by working hours descending</p>
+                        <button id="btnSearchOperatingTime">Go!</button>
+                </div>
+
+                <div class="cont">
+                  <!-- outputs -->
+
+                    <div>
+                      <table id="out1">
+
+                      </table>
+                    </div>
+
+                    <p id="out2"></p>
+                    
+                </div>
+            </div>
+            <script type="module" src="js/main.js"></script>
+        </body>
+    </html>
