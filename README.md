@@ -36,3 +36,9 @@ git push github main && git push origin main
 - [uebung20b_soccerplayer](uebung20b_soccerplayer)
 - [uebung21_fat-arrow-arrays-animals](uebung21_fat-arrow-arrays-animals)
 - [uebung22_powermanagement](uebung22_powermanagement)
+- [uebung24_automated_testing_with_mocha_1](uebung24_automated_testing_with_mocha_1)
+- [uebung24_automated_testing_with_mocha_2](uebung24_automated_testing_with_mocha_2)
+- [uebung24_automated_testing_with_mocha_3](uebung24_automated_testing_with_mocha_3)
+- [uebung24_automated_testing_with_mocha_4](uebung24_automated_testing_with_mocha_4)
+- [uebung24_automated_testing_with_mocha_5](uebung24_automated_testing_with_mocha_5)
+- [uebung24_mocha_own_example](uebung24_mocha_own_example)#
