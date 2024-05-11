@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--step1 -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-
+beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-
+BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?
+family=Source+Sans+Pro:300,300i,400,400i,600,600i" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/
+4.7.0/css/font-awesome.min.css"
+integrity="sha384-
+wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+crossorigin="anonymous" />
+<!-- add mocha css - begin -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/mocha@8.3.0/mocha.css"
+integrity="sha256-a4j/9d0TJl1bbNF1UC8zUh8pnur9RLQIyyaGAVtj8fM="
+crossorigin="anonymous">
+<!-- add mocha css - end -->
+<meta charset="UTF-8" />
+<meta name="google" content="notranslate" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title id="mytitle">Template</title>
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+<h1 id="myheading1">Mocha</h1>
+</div>
+<!-- the element with id="mocha" will contain test results -->
+<div>Mocha</div>
+<div id="testJumbotron" class="jumbotron">
+<div class="alert alert-success">
+<div id="mocha"></div>
+</div>
+</div>
+<div>Output</div>
+<div id="outputJumbotron" class="jumbotron">
+<div id="out1"></div>
+</div>
+</div>
+<!-- add mocha framework code -->
+<script src="https://cdn.jsdelivr.net/npm/mocha@8.3.0/mocha.js"
+integrity="sha256-s4hHgu55oVF0P+d62BoqUxU67xk/3haOtyz0GwZbLgI="
+crossorigin="anonymous"></script>
+<!-- add chai -->
+<script src="https://cdn.jsdelivr.net/npm/chai@4.3.0/chai.js"integrity="sha256-IJdizXl2JdKSsw54dlpN52nTk+JVVh+OPu0ECsLXmV4="
+crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="test/main.test.js"></script>
+</body>
+</html>
