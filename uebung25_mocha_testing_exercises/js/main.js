@@ -214,3 +214,12 @@ class Printer{
   }
 }
 Printer.lastOctett = 1;
+
+
+// eslint-disable-next-line no-constant-condition
+while(true){
+  Circle;
+  output1;
+  checkDif;
+  countNums;
+}
