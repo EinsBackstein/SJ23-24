@@ -43,3 +43,5 @@ git push github main && git push origin main
 - [uebung24_automated_testing_with_mocha_5](uebung24_automated_testing_with_mocha_5)
 - [uebung24_mocha_own_example](uebung24_mocha_own_example)
 - [uebung25_mocha_testing_exercises](uebung25_mocha_testing_exercises)
+- [uebung26_utilities_strings](uebung26_utilities_strings)
+- [uebung27_strings_date_2](uebung27_strings_date_2)
