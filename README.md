@@ -12,7 +12,6 @@ git push github main && git push origin main
 
 ## Inhaltsverzeichnis
 
-- [test123](test123)
 - [uebung01_1JG_recap](uebung01_1JG_recap)
 - [uebung02_array_functions_gui](uebung02_array_functions_gui)
 - [uebung03_logic_gate_XOR](uebung03_logic_gate_XOR)
