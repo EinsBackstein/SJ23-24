@@ -45,3 +45,4 @@ git push github main && git push origin main
 - [uebung25_mocha_testing_exercises](uebung25_mocha_testing_exercises)
 - [uebung26_utilities_strings](uebung26_utilities_strings)
 - [uebung27_strings_date_2](uebung27_strings_date_2)
+- [uebung28_open_wheater_map_api](uebung28_open_wheater_map_api)
