@@ -10,12 +10,9 @@ const appName = 'uebung28 Open Weather Map API';
 document.getElementById('myTitle').innerText = appName;
 document.getElementById('myHeading').innerText = appName;
 
-let output = document.getElementById('output');
-let weatherImg = document.getElementById('weatherImg');
-let input = document.getElementById('input');
-let inputBtn = document.getElementById('inputBtn');
+
 let output2 = document.getElementById('output2');
-let weatherImg2 = document.getElementById('weatherImg2');
+
 
 //Villach ID: 7871492
 //Glanegg ID: 7872811
@@ -118,7 +115,7 @@ fetch(fetchURL)
   })
   .catch((error) => {
     console.log(error);
-    output.innerHTML += error;
+    output2.innerHTML += error;
   });
 console.log(
   'Diese Meldung kommt BEVOR die Wetterdaten aus dem Internet geladen werden'
