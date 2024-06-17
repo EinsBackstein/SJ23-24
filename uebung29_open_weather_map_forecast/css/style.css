@@ -1,0 +1,75 @@
+html {
+  font-family: 'Source Sans Pro', Verdana, Arial, Helvetica, sans-serif;
+}
+#output {
+  color: green;
+}
+
+#error {
+  color: red;
+}
+
+.commentheader {
+  color: rgb(90, 15, 38);
+}
+
+header{
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  padding-bottom: 2px;
+}
+
+input{
+  width: 49%;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container_{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.check{
+  display: inline-flex;
+  align-items: baseline;
+}
+#inColor{
+  margin: 0.4rem;
+}
+
+#output1 {
+  color: rgb(0, 112, 4);
+}
+
+#output2 {
+text-align: center;
+min-width: 24rem;
+}
+
+.cont{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cont2{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+  justify-items: center;
+}
+
+.cont3{
+  width: 80%;
+  display:grid;
+  grid-template-columns: 90% 10%;
+  grid-row-gap: 0.5em;
+}
+
+td{
+  border: 1px black solid;
+}

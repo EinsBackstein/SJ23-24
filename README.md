@@ -46,3 +46,4 @@ git push github main && git push origin main
 - [uebung26_utilities_strings](uebung26_utilities_strings)
 - [uebung27_strings_date_2](uebung27_strings_date_2)
 - [uebung28_open_wheater_map_api](uebung28_open_wheater_map_api)
+- [uebung29_open_weather_map_forecast](uebung29_open_weather_map_forecast)
